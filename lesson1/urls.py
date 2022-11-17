@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from demo.views import index, time
+from demo.views import index, current_time, workdir
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index),
-    path('time/', time),
+    path('', index, name='home'),
+    path('current_time/', current_time, name='time'),
+    path('workdir/', workdir, name='dir')
 ]
