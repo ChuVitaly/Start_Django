@@ -5,8 +5,14 @@
     <title>Title</title>
 </head>
 <body>
-<h2>Hello from Django</h2>
+<h2 style="color: blue; font-size: 30px">Hello from Django, {{ test }} : {{ data }}</h2>
+<ul style="color: green; font-size: 20px">
+    {% for x in word_list %}
+    <li>{{ x }}</li>
+    {% endfor %}
+</ul>
 
+{{ val.upper }}
 
 </body>
 </html>

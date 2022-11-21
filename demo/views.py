@@ -33,12 +33,21 @@ def hello(request):
     # return HttpResponse(f'Hello! {name}, your age: {age}')
 
     # Вывод с помощью шаблона
-    return render(request, 'demo.html')
+    context = {
+        'test': 5,
+        'data': [1, 5, 8],
+        'word_list': ['pen', 'name', 'home', 'cat', 'room'],
+        'val': 'Hello',
+    }
+
+    return render(request, 'demo.html', context)
 
 
 def sum(request, a, b):
     # result = int(a) + int(b) # Без конвертора
     result = a + b # С конвертором
     return HttpResponse(f'Sum = {result}')
+
+
 
 
