@@ -25,7 +25,17 @@ from django.shortcuts import render
 # =================================  Параметры запросов  =====================================
 
 def hello(request):
-    return HttpResponse('Hello from django')
+    name = request.GET['name']
+    age = int(request.GET.get('age', 28)) # 28 дефолтное зн-е
+    country = request.GET.get('country') # При этом способе ошибки не будет если не введешь параметр будет - NONE
+    print(country)
+    # print(age)
+    return HttpResponse(f'Hello! {name}, your age: {age}')
 
+
+def sum(request, a, b):
+    # result = int(a) + int(b) # Без конвертора
+    result = a + b # С конвертором
+    return HttpResponse(f'Sum = {result}')
 
 
