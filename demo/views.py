@@ -49,5 +49,8 @@ def sum(request, a, b):
     return HttpResponse(f'Sum = {result}')
 
 
+# Обработчик пагинации
+def pagi(request):
+    return render(request, 'pagi.html')
 
 
