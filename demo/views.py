@@ -2,6 +2,7 @@ import datetime
 import time
 import os
 from django.http import HttpResponse
+from django.core.paginator import Paginator
 
 # Параметры запросов
 from django.shortcuts import render
@@ -50,7 +51,18 @@ def sum(request, a, b):
 
 
 # Обработчик пагинации
+
+CONTENT = [str(i) for i in range(10000)]
+
+
 def pagi(request):
-    return render(request, 'pagi.html')
+    page_number = int(request.GET.get("page", 1))
+    paginator = Paginator(CONTENT, 10) # 10 Это поскольку выдавать
+    #page = paginator.get_page(5) # 5 Номер страницы
+    page = paginator.get_page(page_number) # Запрашиваем страничку у пользователя какую он хочет
+    context = {
+        'page': page
+    }
+    return render(request, 'pagi.html', context)
 
 

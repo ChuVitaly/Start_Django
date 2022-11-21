@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 # from demo.views import index, current_time, workdir
-from demo.views import hello, sum
+from demo.views import hello, sum, pagi
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,5 +26,6 @@ urlpatterns = [
 # Параметры запросов
     path('hello/', hello),
     # path('sum/<a>/<b>', sum),
-    path('sum/<int:a>/<int:b>', sum) # Задаем маршрут с помощью конвектора
+    path('sum/<int:a>/<int:b>', sum), # Задаем маршрут с помощью конвектора
+    path('pagi/', pagi),
 ]
