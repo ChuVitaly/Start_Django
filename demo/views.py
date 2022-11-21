@@ -25,12 +25,15 @@ from django.shortcuts import render
 # =================================  Параметры запросов  =====================================
 
 def hello(request):
-    name = request.GET['name']
-    age = int(request.GET.get('age', 28)) # 28 дефолтное зн-е
-    country = request.GET.get('country') # При этом способе ошибки не будет если не введешь параметр будет - NONE
-    print(country)
+    # name = request.GET['name']
+    # age = int(request.GET.get('age', 28)) # 28 дефолтное зн-е
+    # country = request.GET.get('country') # При этом способе ошибки не будет если не введешь параметр будет - NONE
+    # print(country)
     # print(age)
-    return HttpResponse(f'Hello! {name}, your age: {age}')
+    # return HttpResponse(f'Hello! {name}, your age: {age}')
+
+    # Вывод с помощью шаблона
+    return render(request, 'demo.html')
 
 
 def sum(request, a, b):
