@@ -14,9 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.http import request
 from django.urls import path
 # from demo.views import index, current_time, workdir
 from demo.views import hello, sum, pagi
+from recipes.views import selection_recipes, omlet, pasta, buter, russian_salad
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,4 +30,10 @@ urlpatterns = [
     # path('sum/<a>/<b>', sum),
     path('sum/<int:a>/<int:b>', sum), # Задаем маршрут с помощью конвектора
     path('pagi/', pagi),
+    path('recipes/', selection_recipes),
+    path('omlet/', omlet),
+    path('pasta/', pasta),
+    path('buter/', buter),
+    path('russian_salad/', russian_salad)
+
 ]

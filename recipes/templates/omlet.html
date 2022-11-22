@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Омлет</title>
+</head>
+<body>
+<style>
+    div {
+       margin: 0 200px;
+       }
+
+       h2 {
+        color: blue;
+        margin-top: 50px;
+        font-size: 35px;
+        }
+
+        ol {
+        color: green;
+        font-size: 28px;
+        margin-top: 20px;
+        }
+
+        h4 {
+        color: red;
+        font-size: 20px;
+        }
+
+
+</style>
+<div>
+        <h2 align="center"><b>Ингредиенты для омлета</b></h2>
+
+    <ol>
+    {% for key, value in omlet.items %}
+    <li>{{ key }} : {{ value }}</li>
+    {% endfor %}
+    </ol>
+
+    <h4>Это на  персону</h4>
+</div>
+
+</body>
+</html>
